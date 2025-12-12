@@ -1,0 +1,32 @@
+[project]
+name = "nord-codes-test"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "allure-pytest>=2.15.2",
+    "fastapi>=0.124.4",
+    "httpx>=0.28.1",
+    "pytest>=9.0.2",
+    "python-dotenv>=1.2.1",
+    "uvicorn>=0.38.0",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.5.0",
+    "ruff>=0.9.9",
+]
+
+[tool.pytest.ini_options]
+addopts = "--alluredir=allure-results"
+python_files = "test_*.py"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = []
